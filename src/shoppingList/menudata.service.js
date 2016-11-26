@@ -32,7 +32,6 @@
 		      }
 		      return foundItems;
 		    }).catch(function(error){
-		    	console.log("console.log error: " + error);
 		      return error;
 		    })
 		  };
