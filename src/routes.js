@@ -13,17 +13,6 @@
 		url: '/',
 		templateUrl: 'src/shoppingList/templates/home.template.html'
 	})
-
-	.state('categoryList', {
-		url: '/categories',
-		templateUrl: 'src/shoppingList/templates/main-categories.template.html',
-		controller: 'CategoriesController as categoryList',
-		resolve: {
-			items: ['MenuDataService', function(MenuDataService) {
-				return MenuDataService.getAllCategories();
-			}]
-		}
-	})
 		.state('itemList', {
 		url: '/items/{itemName}',
 		templateUrl: 'src/shoppingList/templates/main-items.template.html',
@@ -38,7 +27,18 @@
 		// 	}]
 		// }
 		
+	})
+	.state('categoryList', {
+		url: '/categories',
+		templateUrl: 'src/shoppingList/templates/main-categories.template.html',
+		controller: 'CategoriesController as categoryList',
+		resolve: {
+			items: ['MenuDataService', function(MenuDataService) {
+				return MenuDataService.getAllCategories();
+			}]
+		}
 	});
+
 	// .state('itemList', {
 	// 	url: '/categories/{itemName}',
 	// 	templateUrl: 'src/shoppingList/templates/main-items.template.html',
