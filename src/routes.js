@@ -13,7 +13,7 @@
 		templateUrl: 'src/shoppingList/templates/home.template.html'
 	})
 	.state('itemList', {
-		url: '/categories/{itemName}',
+		url: '/items',
 		templateUrl: 'src/shoppingList/templates/main-items.template.html',
 		controller: 'ItemsController as itemList',
 		// resolve: {
