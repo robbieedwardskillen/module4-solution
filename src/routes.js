@@ -24,7 +24,7 @@
 	})
 
 	.state('itemList', {
-		// url: '/categories/{itemName}',
+		url: '/categories/{itemName}',
 		templateUrl: 'src/shoppingList/templates/main-items.template.html',
 		controller: 'ItemsController as itemList',
 		// resolve: {
