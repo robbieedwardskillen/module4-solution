@@ -1,5 +1,5 @@
 (function(){
-	angular.module('MenuApp')
+	angular.module('data')
 	.component('categories', {
 		templateUrl: 'src/shoppingList/templates/categories.template.html',
 		bindings: {
