@@ -24,12 +24,9 @@
 	})
 
 	.state('itemList', {
-		// url: '/categories/{itemName}',
+		url: '/categories/{itemName}',
 		templateUrl: 'src/shoppingList/templates/main-items.template.html',
 		controller: 'ItemsController as itemList',
-		params: {
-			itemName: null
-		},
 		resolve: {
 			items: ['$stateParams', 'MenuDataService', function($stateParams, MenuDataService){
 				return MenuDataService.getItemsForCategory($stateParams.itemName).then(function(items){
