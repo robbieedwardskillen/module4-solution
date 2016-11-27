@@ -1,4 +1,5 @@
 (function(){
+	'use strict';
 	angular.module('MenuApp')
 	.config(RoutesConfig);
 
@@ -36,9 +37,7 @@
 				return MenuDataService.getAllCategories();
 			}]
 		}
-	})
-
-	;
+	});
 	// .state('itemList', {
 	// 	url: '/categories/{itemName}',
 	// 	templateUrl: 'src/shoppingList/templates/main-items.template.html',
