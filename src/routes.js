@@ -26,7 +26,7 @@
 	})
 		.state('itemList', {
 		url: '/items/{itemName}',
-		templateUrl: 'src/shoppingList/templates/items.template.html',
+		templateUrl: 'src/shoppingList/templates/main-items.template.html',
 		controller: 'ItemsController as itemList',
 		resolve: {
 			items: ['$stateParams', 'MenuDataService', function($stateParams, MenuDataService){
@@ -52,7 +52,6 @@
 	// 	// 		});
 	// 	// 	}]
 	// 	// }
-		
 	// });
 
 	}
