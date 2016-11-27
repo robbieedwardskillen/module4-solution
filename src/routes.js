@@ -13,18 +13,7 @@
 		url: '/',
 		templateUrl: 'src/shoppingList/templates/home.template.html'
 	})
-
-	.state('categoryList', {
-		url: '/categories',
-		templateUrl: 'src/shoppingList/templates/main-categories.template.html',
-		controller: 'CategoriesController as categoryList',
-		resolve: {
-			items: ['MenuDataService', function(MenuDataService) {
-				return MenuDataService.getAllCategories();
-			}]
-		}
-	})
-		.state('itemList', {
+	.state('itemList', {
 		url: '/items/{itemName}',
 		templateUrl: 'src/shoppingList/templates/items.template.html',
 		controller: 'ItemsController as itemList',
@@ -38,6 +27,16 @@
 			}]
 		}
 		
+	})
+	.state('categoryList', {
+		url: '/categories',
+		templateUrl: 'src/shoppingList/templates/main-categories.template.html',
+		controller: 'CategoriesController as categoryList',
+		resolve: {
+			items: ['MenuDataService', function(MenuDataService) {
+				return MenuDataService.getAllCategories();
+			}]
+		}
 	});
 	// .state('itemList', {
 	// 	url: '/categories/{itemName}',
