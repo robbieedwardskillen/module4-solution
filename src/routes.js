@@ -13,21 +13,21 @@
 		url: '/',
 		templateUrl: 'src/shoppingList/templates/home.template.html'
 	})
-		.state('itemList', {
-		url: '/items/{itemName}',
-		templateUrl: 'src/shoppingList/templates/main-items.template.html',
-		controller: 'ItemsController as itemList'
-		// resolve: {
-		// 	items: ['$stateParams', 'MenuDataService', function($stateParams, MenuDataService){
-		// 		return MenuDataService.getItemsForCategory($stateParams.itemName).then(function(items){
-		// 			return items;
-		// 		}).catch(function(error){
-		// 			console.log(error);
-		// 		});
-		// 	}]
-		// }
+	// 	.state('itemList', {
+	// 	url: '/items/{itemName}',
+	// 	templateUrl: 'src/shoppingList/templates/main-items.template.html',
+	// 	controller: 'ItemsController as itemList'
+	// 	resolve: {
+	// 		items: ['$stateParams', 'MenuDataService', function($stateParams, MenuDataService){
+	// 			return MenuDataService.getItemsForCategory($stateParams.itemName).then(function(items){
+	// 				return items;
+	// 			}).catch(function(error){
+	// 				console.log(error);
+	// 			});
+	// 		}]
+	// 	}
 		
-	})
+	// })
 	.state('categoryList', {
 		url: '/categories',
 		templateUrl: 'src/shoppingList/templates/main-categories.template.html',
@@ -37,22 +37,22 @@
 				return MenuDataService.getAllCategories();
 			}]
 		}
-	});
+	})
 
-	// .state('itemList', {
-	// 	url: '/categories/{itemName}',
-	// 	templateUrl: 'src/shoppingList/templates/main-items.template.html',
-	// 	controller: 'ItemsController as itemList',
-	// 	// resolve: {
-	// 	// 	items: ['$stateParams', 'MenuDataService', function($stateParams, MenuDataService){
-	// 	// 		return MenuDataService.getItemsForCategory($stateParams.itemName).then(function(items){
-	// 	// 			return items;
-	// 	// 		}).catch(function(error){
-	// 	// 			console.log(error);
-	// 	// 		});
-	// 	// 	}]
-	// 	// }
-	// });
+	.state('itemList', {
+		url: '/categories/{itemName}',
+		templateUrl: 'src/shoppingList/templates/main-items.template.html',
+		controller: 'ItemsController as itemList',
+		resolve: {
+			items: ['$stateParams', 'MenuDataService', function($stateParams, MenuDataService){
+				return MenuDataService.getItemsForCategory($stateParams.itemName).then(function(items){
+					return items;
+				}).catch(function(error){
+					console.log(error);
+				});
+			}]
+		}
+	});
 
 	}
 })();
